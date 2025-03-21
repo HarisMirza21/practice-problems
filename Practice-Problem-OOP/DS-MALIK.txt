@@ -1,0 +1,175 @@
+Question.No 1:
+•	Mark The True Statement
+Answer:
+•	The member variables of a class must be of the same type. (False)
+•	The member functions of a class must be public. (False)
+•	A class can have more than one constructor. (True)
+•	A class can have more than one destructor. (False)
+•	Both constructors and destructors can have parameters (False)
+Question.No 2:
+•	Find Syntax Errors
+Answer:
+a)	There can't be a return type for constructor (line 6)
+b)	Return type missing for print function semi-colon missing after class (line 7 and 9)
+c)	Use of semi-colon instead of colon for access-modifier in class and return type of bool for constructor (line 3 and 8)
+Question.No 3:
+•	Answer The Questions
+Answer:
+a)	Class has two members
+b)	Class has two private members
+c)	Class has two constructors
+d)	void xClass::func() {u=10; w=15.3}
+e)	void xClass::print() const {cout << "x=" << x << '\n' << "y=" << y << endl;}
+f)	xClass::xClass() : u(0), w(0) {}
+g)	x.print();
+h)	xClass t(20, 35.0);
+Question.No 4:
+•	Answer The Questions
+Answer:
+a)	Give Line Number For Constructor
+i: line 1
+ii: line 3
+iii: line 4
+b)	CC:: CC() : u(0), v(0) {}
+c)	CC:: CC(int x) : u(x), v(0) {}
+d)	Definitions For Constructors
+CC:: CC(int x, int y) : u(x), v(y) {}
+CC:: CC(double x, int y) : u(y), v(x) {}
+Question.No 5:
+•	Answer The Questions
+Answer:
+a)	Definitions of Member Functions
+int testClass::sum() {return x+y;}
+void testClass::print() const {cout << "x=" << x << '\n' << "y=" << y << endl;}
+testClass::testClass() : x(0), y(0) {}
+testClass::testClass(int a, int b) {x=a; y=b;}
+b)	Code:
+int main() {
+    testClass t1;
+    t1.print();
+    cout << "Sum: " << t1.sum() << endl << endl;
+    testClass t2(10, 20);
+    t2.print();
+    cout << "Sum: " << t2.sum() << endl << endl;
+    return 0;
+}
+Question.No 6:
+•	Find Output
+•	Definition Of Class
+class clockType
+{
+public:
+    void setTime(int, int, int);
+    void getTime(int&, int&, int&) const;
+    void printTime() const;
+    void incrementSeconds();
+    void incrementMinutes();
+    void incrementHours();
+    bool equalTime(const clockType&) const;
+private:
+    int hr;
+    int min;
+    int sec;
+};
+
+Answer:
+The Definition I Found In This Chapter is Attached Above But Statement states with constructors so adding constructors from own also it is declaration not definition so assuming the outputs according to own definitions
+clockType (int hours, int mins, int secs) : hr(hours), min(mins), sec(secs){cout << "Constructor called with parameters: " << hours << ":" << mins << ":" << secs << endl;}
+clockType (int hours, int mins, int secs) : hr(0), min(0), sec(0){cout << "Default constructor called" << endl;}
+void setTime(int hours, int minutes, int seconds) {hr = hours; min = minutes; sec = seconds;}
+ void getTime(int& hours, int& minutes, int& seconds) const {hours = hr; minutes = min; seconds = sec;}
+void printTime() const {cout << hr << ":" << min << ":" << sec;}
+void incrementSeconds() {sec++;}
+void incrementMinutes() {min++;}
+void incrementHours() {hr++;}
+bool equalTime(const clockType& other) const { return (hr == other.hr && min == other.min && sec == other.sec); }
+
+Output:
+Default constructor called
+Constructor called with parameters: 23:13:75
+0:0:0
+23:13:75
+6:59:39
+6:60:39
+The two times are different.
+Question.No 7:
+•	Answer the questions
+Answer:
+a)	personType person1("Buddy", "Arora");
+b)	person1.print();
+c)	person1.setName("Susan", "Gilbert");
+Question.No 8:
+•	Need of Public And Private Modifier
+Answer:
+The Private And Public Modifiers are used to change the access of members or member functions some times we want to hide data in such cases we use private access modifier but sometimes when we want to allow other functions to access class member functions or members we use public modifier in such cases
+Question.No 9:
+•	What is a constructor
+Answer:
+A constructor is a special member function of a class it has different types default constructor copy constructor move constructor parameterized constructors which are used according to their need default constructor is pre defined for every class and is called automatically every time an object of a class is created a parameterized constructor has arguments and is called when arguments are passed to it copy constructors are used to copy the data of other objects into other objects where as move constructor introduced in C++11 in move semantics is used to pass on the object to other object transferring the owner ship of data instead of copying it, it saves a lot of memory as no new object is being created
+Question.No 10:
+•	Character For Destructor
+Answer:
+The tilde character is used before destructor's name which is shown in option(c)
+Question.No 11:
+•	What Is Destructor
+Answer:
+Like Constructor Desturctor is also a special member function that is called when an object is destroyed from memory like default constructor we can also overload it, it is also by default in C++ Classes
+Question.No 12:
+•	Definition of a class
+Definition:
+class secretType {
+    string name;
+    int age, weight;
+    double height;
+public:
+    secretType(string aName="", int anAge=0, int aWeight=0, double aHeight=0);
+    void print() const;
+    void setName(string aName);
+    void setAge(int anAge);
+    void setWeight(int aWeight);
+    void setHeight(double aHeight);
+    string getName() const;
+    int getAge() const;
+    int getWeight() const;
+    double getHeight() const;
+};
+secretType::secretType(string aName, int anAge, int aWeight, double aHeight) 
+    : name(aName), age(anAge), weight(aWeight), height(aHeight) {}
+void secretType::print() const {
+    cout << "The Name Is : " << name << endl;
+    cout << "The Age Is : " << age << endl;
+    cout << "The Weight Is : " << weight << endl;
+    cout << "The Height Is : " << height << endl;
+}
+void secretType::setName(string aName) { name = aName; }
+void secretType::setAge(int anAge) { age = anAge; }
+void secretType::setWeight(int aWeight) { weight = aWeight; }
+void secretType::setHeight(double aHeight) { height = aHeight; }
+string secretType::getName() const { return name; }
+int secretType::getAge() const { return age; }
+int secretType::getWeight() const { return weight; }
+double secretType::getHeight() const { return height; }
+Question.No 13:
+•	Answer the questions
+Answer:
+a)	Define the count outside the class
+int myClass::count = 0;
+b)	myClass:: incrementCount();
+c)	myClass:: printCount ();
+d)	Definitions
+void setX(int a) { x = a; }
+void printX() const { cout << "x = " << x; }
+static void printCount() { cout << "count = " << count; }
+static void incrementCount() { count++; }
+myClass(int a = 0) : x(a) {}
+      e) myClass myObject1(5);
+      f) myClass myObject2(7);
+      g) line 3 and 4 are invalid other are valid we call static members using scope resolution
+      h) Output:
+x = 5
+count = 2
+count = 2
+x = 7
+x = 14
+count = 3
+count = 3
